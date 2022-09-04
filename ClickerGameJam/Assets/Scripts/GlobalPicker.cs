@@ -13,18 +13,16 @@ public class GlobalPicker : MonoBehaviour
     public int currentCash;
     public static int pickerValue = 50;
     public static bool turnOffButton = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pickerStats;
+    public static int numberOfPickers; 
+    public static int pickPerSec;
+    
 
     // Update is called once per frame
     void Update()
     {
         currentCash = GlobalCash.CashCount; 
+        pickerStats.GetComponent<Text>().text = "Pickers: " + numberOfPickers + " picking " + pickPerSec + " Apples Per Second";
         fakeText.GetComponent<Text>().text = "Buy Picker - $" + pickerValue; 
         realText.GetComponent<Text>().text = "Buy Picker - $" + pickerValue;
         if (currentCash >= pickerValue)

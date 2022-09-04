@@ -7,11 +7,12 @@ public class AutoApple : MonoBehaviour
 
     public bool CreatingApple = false;
     public static int AppleIncrease = 1;
-    public int InternalIncrease = 1; 
+    public int InternalIncrease; 
 
     // Update is called once per frame
     void Update()
     {
+        AppleIncrease = GlobalPicker.pickPerSec;
         InternalIncrease = AppleIncrease;
         if (CreatingApple == false)
         {
